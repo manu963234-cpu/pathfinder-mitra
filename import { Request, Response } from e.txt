@@ -1,0 +1,44 @@
+import { Request, Response } from "express"
+
+import { askMitra } from "../services/gemini.service"
+
+import { extractYoutubeQuery } from "../services/youtube.service"
+
+export async function chatController(
+  req: Request,
+  res: Response
+) {
+
+  try {
+
+    const { message, language } = req.body
+
+    if (!message) {
+      return res.status(400).json({
+        error: "Message required",
+      })
+    }
+
+    const aiReply = await askMitra(
+      message,
+      language || "English"
+    )
+
+    const youtubeQuery =
+      extractYoutubeQuery(aiReply)
+
+    return res.json({
+      success: true,
+      reply: aiReply,
+      youtubeQuery,
+    })
+
+  } catch (error) {
+
+    console.log(error)
+
+    return res.status(500).json({
+      error: "AI Error",
+    })
+  }
+}

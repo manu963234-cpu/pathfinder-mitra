@@ -1,0 +1,7 @@
+{
+  "name": "pathfinder-backend",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "ts-node-dev src/server.ts"
+  }
+}

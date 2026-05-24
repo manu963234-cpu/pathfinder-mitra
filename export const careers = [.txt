@@ -1,0 +1,22 @@
+export const careers = [
+  {
+    name: "Software Engineer",
+    salary: "₹4L - ₹40L",
+    path: "PUC → Engineering → Internship"
+  },
+  {
+    name: "IAS Officer",
+    salary: "₹8L - ₹20L",
+    path: "Degree → UPSC"
+  },
+  {
+    name: "Doctor",
+    salary: "₹6L - ₹50L",
+    path: "NEET → MBBS"
+  },
+  {
+    name: "Farmer Entrepreneur",
+    salary: "₹3L - ₹15L",
+    path: "Agriculture + Startup"
+  }
+]

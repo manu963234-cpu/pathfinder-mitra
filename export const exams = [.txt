@@ -1,0 +1,17 @@
+export const exams = [
+  {
+    name: "KCET",
+    level: "State",
+    month: "April"
+  },
+  {
+    name: "JEE Main",
+    level: "National",
+    month: "January"
+  },
+  {
+    name: "NEET",
+    level: "National",
+    month: "May"
+  }
+]

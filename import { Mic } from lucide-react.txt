@@ -1,0 +1,25 @@
+import { Mic } from "lucide-react"
+import { startListening } from "../hooks/useSpeech"
+
+export default function VoiceFAB() {
+
+  const handleVoice = () => {
+    startListening((text) => {
+      console.log(text)
+    })
+  }
+
+  return (
+    <button
+      onClick={handleVoice}
+      className="
+        fixed bottom-6 right-6
+        bg-cyan-400
+        p-4 rounded-full
+        shadow-2xl
+      "
+    >
+      <Mic />
+    </button>
+  )
+}

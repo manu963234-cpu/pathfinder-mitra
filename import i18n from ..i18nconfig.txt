@@ -1,0 +1,21 @@
+import i18n from "../i18n/config"
+
+export default function LanguageSwitcher() {
+
+  const changeLang = (lang: string) => {
+    i18n.changeLanguage(lang)
+    localStorage.setItem("lang", lang)
+  }
+
+  return (
+    <select
+      onChange={(e) => changeLang(e.target.value)}
+      className="bg-black/40 p-2 rounded-xl"
+    >
+      <option value="en">English</option>
+      <option value="kn">ಕನ್ನಡ</option>
+      <option value="hi">हिंदी</option>
+      <option value="ta">தமிழ்</option>
+    </select>
+  )
+}

@@ -1,0 +1,10 @@
+export function extractYoutubeQuery(text: string) {
+
+  const regex = /\[YT:(.*?)\]/
+
+  const match = text.match(regex)
+
+  if (!match) return null
+
+  return match[1].trim()
+}

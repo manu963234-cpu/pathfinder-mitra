@@ -1,0 +1,44 @@
+import Navbar from "../components/Navbar"
+import GlassCard from "../components/GlassCard"
+import { careers } from "../data/careers"
+
+export default function Explore() {
+
+  return (
+    <div className="min-h-screen bg-[#0B1437]">
+
+      <Navbar />
+
+      <div className="
+        p-6
+        grid
+        grid-cols-1
+        md:grid-cols-2
+        lg:grid-cols-4
+        gap-6
+      ">
+
+        {careers.map((career) => (
+
+          <GlassCard key={career.name}>
+
+            <h2 className="text-2xl text-yellow-400">
+              {career.name}
+            </h2>
+
+            <p className="mt-2">
+              {career.salary}
+            </p>
+
+            <p className="mt-2 text-cyan-300">
+              {career.path}
+            </p>
+
+          </GlassCard>
+
+        ))}
+
+      </div>
+    </div>
+  )
+}

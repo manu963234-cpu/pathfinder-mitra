@@ -1,0 +1,32 @@
+import { GoogleGenerativeAI } from "@google/generative-ai"
+
+import { MITRA_PROMPT } from "../prompts/mitra.prompt"
+
+const genAI = new GoogleGenerativeAI(
+  process.env.GEMINI_API_KEY!
+)
+
+export async function askMitra(
+  message: string,
+  language: string
+) {
+
+  const model = genAI.getGenerativeModel({
+    model: "gemini-1.5-flash",
+  })
+
+  const prompt = `
+${MITRA_PROMPT}
+
+Language: ${language}
+
+User Question:
+${message}
+`
+
+  const result = await model.generateContent(prompt)
+
+  const response = await result.response
+
+  return response.text()
+}

@@ -1,0 +1,7 @@
+create table profiles (
+  id uuid primary key,
+  name text,
+  language text,
+  streak integer default 0,
+  created_at timestamp default now()
+);
